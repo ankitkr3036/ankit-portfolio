@@ -186,12 +186,12 @@ function App() {
             <div className="image-glow"></div>
 
             <img
-              src={profileImageUrl}
+              src="profilepic.jpeg"
               alt="Ankit Kumar"
               className="profile-photo"
               loading="eager"
               onError={() => {
-                console.error("Profile photo could not load:", profileImageUrl);
+                console.error("Profile photo could not load:", profilepic.jpeg);
               }}
               style={{
                 display: "block",
@@ -238,7 +238,7 @@ function App() {
               </p>
               <div className="resume-buttons">
                 <a
-                  href={resumeUrl}
+                  href="Resume BTech_CSE1.pdf"
                   className="btn btn-primary"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -247,7 +247,7 @@ function App() {
                 </a>
 
                 <a
-                  href={resumeUrl}
+                  href="Resume BTech_CSE1.pdf"
                   className="btn btn-outline"
                   download="Ankit_Kumar_Resume.pdf"
                 >
