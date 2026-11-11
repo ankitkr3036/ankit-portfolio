@@ -62,6 +62,10 @@ function App() {
   const [contactStatus, setContactStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Files in Vite's public folder are served from BASE_URL.
+  const profileImageUrl = `${import.meta.env.BASE_URL}profilepic.jpeg`;
+  const resumeUrl = `${import.meta.env.BASE_URL}Resume%20BTech_CSE1.pdf`;
+
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("portfolio-theme", theme);
@@ -180,14 +184,27 @@ function App() {
 
           <div className="hero-image reveal">
             <div className="image-glow"></div>
+
             <img
-              src="/profilepic.jpeg"
+              src={profileImageUrl}
               alt="Ankit Kumar"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
+              className="profile-photo"
+              loading="eager"
+              onError={() => {
+                console.error("Profile photo could not load:", profileImageUrl);
+              }}
+              style={{
+                display: "block",
+                position: "relative",
+                zIndex: 2,
+                width: "min(310px, 82%)",
+                height: "360px",
+                objectFit: "cover",
+                objectPosition: "center",
+                borderRadius: "18px",
               }}
             />
-            <div className="image-placeholder">AK</div>
+
             <div className="floating-card">
               <span>💻</span>
               <div>
@@ -219,10 +236,24 @@ function App() {
                 My goal is to become a skilled Software Developer and
                 contribute to meaningful products.
               </p>
+              <div className="resume-buttons">
+                <a
+                  href={resumeUrl}
+                  className="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Resume ↗
+                </a>
 
-              <a href="/Resume BTech_CSE1.pdf" className="btn btn-primary" download>
-                Download Resume ↓
-              </a>
+                <a
+                  href={resumeUrl}
+                  className="btn btn-outline"
+                  download="Ankit_Kumar_Resume.pdf"
+                >
+                  Download Resume ↓
+                </a>
+              </div>
             </div>
 
             <div className="about-stats">
