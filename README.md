@@ -1,7 +1,7 @@
-# Ankit Kumar Premium Developer Portfolio
+# Ankit Kumar Developer Portfolio
 
 ## Run locally
-1. Extract the ZIP and open the folder in VS Code.
+1. Open the folder in VS Code.
 2. Open Terminal → New Terminal.
 3. Run `npm install`.
 4. Run `npm run dev`.
